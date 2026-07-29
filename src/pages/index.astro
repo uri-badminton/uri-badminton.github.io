@@ -22,7 +22,7 @@ const nextPractice = site.practiceSchedule[0];
       </div>
       <div class="hero-brand-panel">
         {site.hero.imagePath ? (
-          <img class="hero-image" src={site.hero.imagePath} alt="URI Badminton club practice" />
+          <img class="hero-image" src={site.hero.imagePath} alt={site.hero.imageAlt ?? ""} width="1200" height="630" />
         ) : (
           <>
             <img src="/uri-badminton-logo.png" alt="" width="300" height="300" />
@@ -56,7 +56,7 @@ const nextPractice = site.practiceSchedule[0];
     </div>
   </section>
 
-  <section class="section section-tint" aria-labelledby="videos-heading">
+  <section class="section section-tint home-videos" aria-labelledby="videos-heading">
     <div class="container">
       <div class="section-header-row">
         <div>
@@ -89,7 +89,7 @@ const nextPractice = site.practiceSchedule[0];
     </div>
   </section>
 
-  <section class="join-band">
+  <section class="join-band home-join-band">
     <div class="container join-band-inner">
       <div>
         <p class="eyebrow">Your next rally starts here</p>

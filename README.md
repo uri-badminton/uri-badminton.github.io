@@ -75,7 +75,7 @@ Unconfigured URLs must remain `undefined`; the site hides their links automatica
 
 The active GroupMe URL and its academic-year label are stored together in `site.contact`. Update both when a new annual group replaces the current `2025–2026 GroupMe`.
 
-To add a real homepage photograph later, save it in `public/images/` and set `hero.imagePath` to its root-relative path, such as `"/images/club-practice.jpg"`.
+The homepage currently uses `/og.png` as its compact hero banner. To replace it with a real club photograph later, save the image in `public/images/`, then update `hero.imagePath` and `hero.imageAlt`.
 
 ## Inactive announcements
 

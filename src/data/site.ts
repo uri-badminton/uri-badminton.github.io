@@ -15,6 +15,7 @@ export type SiteConfig = {
     heading: string;
     description: string;
     imagePath?: string;
+    imageAlt?: string;
   };
   practiceSchedule: PracticeSession[];
   contact: {
@@ -51,8 +52,8 @@ export const site: SiteConfig = {
     heading: "Play. Improve. Connect.",
     description:
       "Meet fellow students, build your game, and enjoy time on court. Beginners, experienced players, and everyone in between are welcome.",
-    // Add a public image path later, for example: "/images/club-practice.jpg"
-    imagePath: undefined,
+    imagePath: "/og.png",
+    imageAlt: "URI Badminton — Play. Improve. Connect.",
   },
   practiceSchedule: [
     {
