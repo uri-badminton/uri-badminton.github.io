@@ -685,6 +685,27 @@ ul {
   margin-top: 2rem;
 }
 
+.evidence-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.8rem;
+  align-items: baseline;
+  margin-top: 1.25rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.evidence-links span {
+  flex-basis: 100%;
+  font-weight: 700;
+}
+
+.evidence-links a {
+  color: var(--navy);
+  font-weight: 700;
+  text-underline-offset: 0.2em;
+}
+
 .check-list {
   display: grid;
   padding: 0;
