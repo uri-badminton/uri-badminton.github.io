@@ -1,12 +1,12 @@
 ---
-title: "Welcome to the URI Badminton Website"
+title: "Welcome to the URI Badminton Club Website"
 date: 2026-07-29
 summary: "Our new student-run community website is ready for practice news, schedules, and training resources."
 pinned: false
 draft: false
 ---
 
-Welcome to the new home of URI Badminton.
+Welcome to the new home of URI Badminton Club.
 
 This website will make it easier to find practice announcements, weekly schedule details, training videos, and information about joining the community. It is independently maintained by student organizers and will grow as confirmed club information becomes available.
 

@@ -1,6 +1,6 @@
-# URI Badminton website
+# URI Badminton Club website
 
-The public website for URI Badminton, a student-run badminton community at the University of Rhode Island. It provides maintainable pages for practice information, automatically synced YouTube videos, and participation details without a backend or runtime services.
+The public website for URI Badminton Club, a student-run badminton community at the University of Rhode Island. It provides maintainable pages for practice information, automatically synced YouTube videos, and participation details without a backend or runtime services.
 
 The intended public URL is <https://uri-badminton.github.io>.
 
@@ -106,7 +106,7 @@ Use a filename such as `2026-08-15-practice-update.md`. Dates are parsed consist
 
 ## YouTube video synchronization
 
-The public URI Badminton channel is configured as <https://www.youtube.com/@uribadminton>. GitHub Actions reads its public YouTube RSS feed during every deployment and every six hours. Up to the 15 most recent uploads are rendered statically; the complete archive remains available on YouTube.
+The public URI Badminton Club channel is configured as <https://www.youtube.com/@uribadminton>. GitHub Actions reads its public YouTube RSS feed during every deployment and every six hours. Up to the 15 most recent uploads are rendered statically; the complete archive remains available on YouTube.
 
 No API key is required. Run the synchronization locally with:
 

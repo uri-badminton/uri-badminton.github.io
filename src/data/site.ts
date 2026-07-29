@@ -43,9 +43,9 @@ const optionalUrl = (value?: string): string | undefined => {
 };
 
 export const site: SiteConfig = {
-  name: "URI Badminton",
+  name: "URI Badminton Club",
   description:
-    "A student-run badminton community at the University of Rhode Island, welcoming students of all experience levels.",
+    "URI Badminton Club is a student-run community at the University of Rhode Island, welcoming students of all experience levels.",
   url: "https://uri-badminton.github.io",
   repositoryUrl: "https://github.com/uri-badminton/uri-badminton.github.io",
   hero: {
@@ -53,7 +53,7 @@ export const site: SiteConfig = {
     description:
       "Meet fellow students, build your game, and enjoy time on court. Beginners, experienced players, and everyone in between are welcome.",
     imagePath: "/og.png",
-    imageAlt: "URI Badminton — Play. Improve. Connect.",
+    imageAlt: "URI Badminton Club — Play. Improve. Connect.",
   },
   practiceSchedule: [
     {
@@ -84,5 +84,5 @@ export const site: SiteConfig = {
     "A welcoming attitude and good sportsmanship",
   ],
   disclaimer:
-    "URI Badminton is a student-run badminton community at the University of Rhode Island. This website is independently maintained by student organizers.",
+    "URI Badminton Club is a student-run badminton community at the University of Rhode Island. This website is independently maintained by student organizers.",
 };

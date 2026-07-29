@@ -1,4 +1,4 @@
-# URI Badminton content guide
+# URI Badminton Club content guide
 
 This guide is for student organizers who want to update the website using only GitHub in a browser.
 
