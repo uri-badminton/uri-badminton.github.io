@@ -984,6 +984,27 @@ ul {
   margin-bottom: 0.35rem;
 }
 
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.footer-social-icon {
+  display: grid;
+  width: 1.75rem;
+  height: 1.75rem;
+  flex: 0 0 auto;
+  place-items: center;
+  background: var(--blue);
+  border-radius: 50%;
+}
+
+.footer-social-icon img {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
 .footer-bottom {
   padding: 1.5rem 0;
   margin-top: 3rem;

@@ -13,10 +13,19 @@ const socialLinks = [
   site.contact.groupMeUrl && {
     href: site.contact.groupMeUrl,
     label: site.contact.groupMeLabel ?? "GroupMe",
+    iconPath: "/icons/groupme.svg",
   },
-  site.contact.instagramUrl && { href: site.contact.instagramUrl, label: "Instagram" },
-  site.contact.youtubeChannelUrl && { href: site.contact.youtubeChannelUrl, label: "YouTube" },
-].filter(Boolean) as { href: string; label: string }[];
+  site.contact.instagramUrl && {
+    href: site.contact.instagramUrl,
+    label: "Instagram",
+    iconPath: "/icons/instagram.svg",
+  },
+  site.contact.youtubeChannelUrl && {
+    href: site.contact.youtubeChannelUrl,
+    label: "YouTube",
+    iconPath: "/icons/youtube.svg",
+  },
+].filter(Boolean) as { href: string; label: string; iconPath: string }[];
 ---
 
 <footer class="site-footer">
@@ -41,7 +50,14 @@ const socialLinks = [
       {socialLinks.length > 0 && (
         <ul class="footer-links social-links">
           {socialLinks.map((link) => (
-            <li><a href={link.href} rel="me noopener" target="_blank">{link.label}</a></li>
+            <li>
+              <a class="footer-social-link" href={link.href} rel="me noopener" target="_blank">
+                <span class="footer-social-icon" aria-hidden="true">
+                  <img src={link.iconPath} alt="" width="16" height="16" />
+                </span>
+                <span>{link.label}</span>
+              </a>
+            </li>
           ))}
         </ul>
       )}
