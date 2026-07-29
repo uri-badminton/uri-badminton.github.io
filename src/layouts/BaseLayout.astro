@@ -8,9 +8,10 @@ type Props = {
   title: string;
   description: string;
   image?: string;
+  noindex?: boolean;
 };
 
-const { title, description, image = "/og.png" } = Astro.props;
+const { title, description, image = "/og.png", noindex = false } = Astro.props;
 const fullTitle = title === site.name ? title : `${title} | ${site.name}`;
 const canonical = new URL(Astro.url.pathname, site.url);
 const imageUrl = new URL(image, site.url);
@@ -23,6 +24,7 @@ const imageUrl = new URL(image, site.url);
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:type" content="website" />

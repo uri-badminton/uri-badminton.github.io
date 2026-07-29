@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { site } from "../data/site";
 ---
 
-<BaseLayout title="Schedule" description="Weekly practice schedule and arrival information for URI Badminton.">
+<BaseLayout title="Schedule" description="Weekly practice schedule for the URI Badminton student community.">
   <section class="page-hero">
     <div class="container narrow">
       <p class="eyebrow">Plan your practice</p>
@@ -26,37 +26,9 @@ import { site } from "../data/site";
           </article>
         ))}
       </div>
-    </div>
-  </section>
-  <section class="section section-tint">
-    <div class="container info-grid">
-      <article>
-        <p class="eyebrow">Before you arrive</p>
-        <h2>Plan for the court</h2>
-        <h3>Arrival guidance</h3>
-        <p>{site.arrivalGuidance}</p>
-        <h3>Location guidance</h3>
-        <p>{site.locationGuidance}</p>
-      </article>
-      <article>
-        <p class="eyebrow">Pack the essentials</p>
-        <h2>What to bring</h2>
-        <ul class="check-list">
-          {site.whatToBring.map((item) => <li>{item}</li>)}
-        </ul>
-      </article>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container policy-card">
-      <div>
-        <p class="eyebrow">Before leaving for practice</p>
-        <h2>Cancellations and updates</h2>
-        <p>{site.cancellationPolicy}</p>
-      </div>
-      <div class="button-group">
-        <a class="button button-primary" href="/announcements/">Check announcements</a>
-        <a class="button button-outline" href="/join/">Join a practice</a>
+      <div class="schedule-action">
+        <p>Interested in playing with us?</p>
+        <a class="button button-primary" href="/join/">Join a practice</a>
       </div>
     </div>
   </section>

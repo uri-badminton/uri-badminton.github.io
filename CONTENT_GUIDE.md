@@ -9,6 +9,10 @@ This guide is for student organizers who want to update the website using only G
 - Keep the filename date and the date inside the file consistent.
 - Use a new branch and pull request so another organizer can review the update.
 
+## Inactive announcement archive
+
+Announcements are currently hidden from the website navigation and search engines. Keep the existing files for possible future use, but routine updates should focus on the schedule, Join Us information, and the YouTube channel.
+
 ## Add an announcement in your browser
 
 1. Open `src/content/announcements` in the GitHub repository.
@@ -37,11 +41,15 @@ expiresAt:
 Add the complete, confirmed update here.
 ```
 
-Set `pinned: true` for the announcement that should receive prominent homepage attention. If it is time-sensitive, add an end date such as `expiresAt: 2026-08-22`.
+The current homepage does not show pinned announcements. This field is retained only for possible future use.
 
 Set `draft: true` while preparing content. Drafts do not appear on the published site.
 
-## Add a training video in your browser
+## Publish a training video
+
+Upload the video to <https://www.youtube.com/@uribadminton>. The website checks the channel feed during deployment and every six hours, so no website file normally needs to be edited. YouTube’s public feed supplies the latest 15 uploads; visitors can use the channel link for the full archive.
+
+## Add a curated training video file
 
 1. Open `src/content/videos` in the GitHub repository.
 2. Select **Add file**.

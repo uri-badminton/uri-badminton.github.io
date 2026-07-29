@@ -3,11 +3,11 @@ type Props = {
   title: string;
   date: Date;
   youtubeId: string;
-  summary: string;
-  topics: string[];
+  summary?: string;
+  topics?: string[];
 };
 
-const { title, date, youtubeId, summary, topics } = Astro.props;
+const { title, date, youtubeId, summary, topics = [] } = Astro.props;
 const watchUrl = `https://www.youtube.com/watch?v=${encodeURIComponent(youtubeId)}`;
 const thumbnailUrl = `https://i.ytimg.com/vi/${encodeURIComponent(youtubeId)}/hqdefault.jpg`;
 ---
@@ -23,7 +23,7 @@ const thumbnailUrl = `https://i.ytimg.com/vi/${encodeURIComponent(youtubeId)}/hq
       {date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })}
     </time>
     <h2>{title}</h2>
-    <p>{summary}</p>
+    {summary && <p>{summary}</p>}
     {topics.length > 0 && (
       <ul class="tag-list" aria-label="Topics">
         {topics.map((topic) => <li>{topic}</li>)}

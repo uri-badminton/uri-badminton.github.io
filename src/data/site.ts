@@ -64,7 +64,7 @@ export const site: SiteConfig = {
   contact: {
     email: undefined,
     instagramUrl: optionalUrl("https://www.instagram.com/uri_badminton/"),
-    youtubeChannelUrl: optionalUrl(),
+    youtubeChannelUrl: optionalUrl("https://www.youtube.com/@uribadminton"),
     interestFormUrl: optionalUrl(),
   },
   locationGuidance:

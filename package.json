@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "sync:youtube": "node scripts/sync-youtube.mjs",
     "check": "astro check",
     "build": "astro check && astro build",
     "preview": "astro preview"

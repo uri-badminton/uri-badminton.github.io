@@ -1,6 +1,6 @@
 # URI Badminton website
 
-The public website for URI Badminton, a student-run badminton community at the University of Rhode Island. It provides maintainable pages for practice information, announcements, training videos, and participation details without a backend or external runtime services.
+The public website for URI Badminton, a student-run badminton community at the University of Rhode Island. It provides maintainable pages for practice information, automatically synced YouTube videos, and participation details without a backend or runtime services.
 
 The intended public URL is <https://uri-badminton.github.io>.
 
@@ -48,9 +48,10 @@ CI uses `npm ci` for a clean, lockfile-based install.
 src/
   components/            Shared header, footer, and cards
   content/
-    announcements/       Announcement Markdown files
-    videos/              Training video Markdown files
+    announcements/       Inactive announcement archive
+    videos/              Optional curated video Markdown files
   data/site.ts           Schedule, links, contact details, and shared copy
+  data/youtube-videos.json  Build-time YouTube feed cache
   layouts/               Reusable page metadata and site shell
   pages/                 Public routes
   styles/global.css      Site-wide responsive design
@@ -74,6 +75,10 @@ Unconfigured URLs must remain `undefined`; the site hides their links automatica
 
 To add a real homepage photograph later, save it in `public/images/` and set `hero.imagePath` to its root-relative path, such as `"/images/club-practice.jpg"`.
 
+## Inactive announcements
+
+The announcement system remains in the repository for possible future use, but it is currently removed from navigation, excluded from the sitemap, and marked `noindex`. Do not expect new announcement files to appear in the public navigation.
+
 ## Adding an announcement
 
 Create a dated Markdown file in `src/content/announcements/`:
@@ -93,11 +98,23 @@ Write the full announcement here.
 
 Use a filename such as `2026-08-15-practice-update.md`. Dates are parsed consistently and announcements are sorted newest first.
 
-- Set `pinned: true` to feature an announcement on the homepage.
+- The current homepage does not display pinned announcements.
 - Set `draft: true` to keep it out of the built site.
 - Add `expiresAt: 2026-08-22` to stop a pinned announcement from appearing prominently after that date. The detail page remains available.
 
-## Adding a YouTube training video
+## YouTube video synchronization
+
+The public URI Badminton channel is configured as <https://www.youtube.com/@uribadminton>. GitHub Actions reads its public YouTube RSS feed during every deployment and every six hours. Up to the 15 most recent uploads are rendered statically; the complete archive remains available on YouTube.
+
+No API key is required. Run the synchronization locally with:
+
+```bash
+npm run sync:youtube
+```
+
+If YouTube is temporarily unavailable, the script keeps the existing checked-in cache so the website can still build.
+
+## Adding a curated YouTube training video
 
 Create a dated Markdown file in `src/content/videos/`:
 
