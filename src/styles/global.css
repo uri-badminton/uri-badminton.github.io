@@ -429,12 +429,23 @@ ul {
 
 .text-link {
   display: inline-flex;
-  min-height: 2.75rem;
+  width: fit-content;
+  min-height: 2.5rem;
   align-items: center;
   gap: 0.4rem;
+  padding: 0.35rem 0.1rem 0.25rem;
   color: var(--navy);
+  border-bottom: 2px solid currentColor;
   font-weight: 700;
-  text-decoration-thickness: 2px;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: gap 160ms ease, color 160ms ease;
+}
+
+.text-link:hover {
+  gap: 0.6rem;
+  color: var(--blue);
 }
 
 .section-header-row {
