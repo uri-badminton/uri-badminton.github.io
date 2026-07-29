@@ -11,13 +11,13 @@ const nextPractice = site.practiceSchedule[0];
 <BaseLayout title={site.name} description={site.description}>
   <section class="hero home-hero" aria-label="URI Badminton Club — Play. Improve. Connect.">
     <h1 class="sr-only">{site.name} — {site.hero.heading}</h1>
-    <div class="hero-action-strip">
-      <div class="container hero-action-inner">
-        <p>{site.hero.description}</p>
-        <div class="button-group">
-          <a class="button button-primary" href="/join/">Join a Practice</a>
-          <a class="button button-secondary" href="/training-videos/">Watch Training Videos</a>
-        </div>
+  </section>
+  <section class="hero-action-strip" aria-label="Get started">
+    <div class="container hero-action-inner">
+      <p>{site.hero.description}</p>
+      <div class="button-group">
+        <a class="button button-primary" href="/join/">Join a Practice</a>
+        <a class="button button-secondary" href="/training-videos/">Watch Training Videos</a>
       </div>
     </div>
   </section>

@@ -235,8 +235,8 @@ ul {
   position: relative;
   padding-top: min(52.5vw, 27rem);
   color: var(--white);
-  background-color: var(--navy);
-  background-image: url("/og.png");
+  background-color: #021f43;
+  background-image: url("/hero-high-res.png");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: min(100%, 68.75rem) auto;
@@ -244,7 +244,8 @@ ul {
 
 .hero-action-strip {
   padding: 1.15rem 0;
-  background: rgb(0 25 54 / 94%);
+  color: var(--white);
+  background: var(--navy-2);
   border-top: 1px solid rgb(192 221 242 / 22%);
 }
 
