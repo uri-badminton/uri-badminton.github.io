@@ -44,11 +44,11 @@ export const beginnerFaqs: FaqItem[] = [
   {
     question: "Is badminton actually a good workout?",
     answer:
-      "Yes—although it may not feel like one until you stop. Social play is estimated around 5.5 METs and competitive play can reach about 9 METs: roughly 400–660 calories an hour for a 70 kg player, depending on pace and breaks. Cardio, but with a scoreboard.",
+      "Yes—casual badminton is real cardio: roughly 400 calories an hour for a 154-pound player. Pick up the pace, and competitive play can approach 650 calories an hour. Exact numbers vary, but in normal terms: your watch will notice.",
     category: "fitness",
     sources: [
-      { label: "Energy estimates", href: "https://pacompendium.com/sports/" },
-      { label: "Fitness study", href: "https://pubmed.ncbi.nlm.nih.gov/27472020/" },
+      { label: "Energy estimates (5.5–9 METs)", href: "https://pacompendium.com/sports/" },
+      { label: "Eight-week fitness study", href: "https://pubmed.ncbi.nlm.nih.gov/27472020/" },
     ],
   },
 ];
