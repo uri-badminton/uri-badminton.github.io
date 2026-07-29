@@ -1232,6 +1232,10 @@ ul {
 }
 
 @media (max-width: 41.99rem) {
+  .schedule-hero::after {
+    content: none;
+  }
+
   .hero-action-strip {
     padding-block: 0.9rem;
   }
