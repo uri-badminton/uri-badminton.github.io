@@ -27,30 +27,24 @@ const externalLinks = [
 ---
 
 <BaseLayout title="Join Us" description="Join URI Badminton Club. Players of every experience level are welcome.">
-  <section class="page-hero join-hero">
-    <div class="container narrow">
-      <p class="eyebrow">Everyone starts somewhere</p>
-      <h1>Come play with us.</h1>
-      <p>Whether you are picking up a racket for the first time or looking for stronger rallies, you are welcome at URI Badminton Club.</p>
-    </div>
-  </section>
+  <h1 class="sr-only">Join URI Badminton Club</h1>
   <section class="section">
-    <div class="container info-grid welcome-grid">
-      <article class="feature-card">
-        <span class="feature-number">01</span>
-        <h2>Beginners welcome</h2>
-        <p>Come learn the basics in a friendly environment. You do not need prior competitive experience.</p>
-      </article>
-      <article class="feature-card">
-        <span class="feature-number">02</span>
-        <h2>Keep growing</h2>
-        <p>Intermediate and advanced players can meet new partners, practice technique, and find challenging games.</p>
-      </article>
-      <article class="feature-card">
-        <span class="feature-number">03</span>
-        <h2>Try a practice</h2>
-        <p>Attend a practice and get to know the community before making any longer commitment.</p>
-      </article>
+    <div class="container contact-panel">
+      <div>
+        <p class="eyebrow">Stay in the loop</p>
+        <h2>Join the conversation</h2>
+        <p>The {site.contact.groupMeLabel} is our current group chat. Instagram is another good place to follow club updates.</p>
+      </div>
+      <div class="contact-options">
+        {site.contact.email && <p><a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></p>}
+        {externalLinks.length > 0 ? (
+          <ul class="button-list">
+            {externalLinks.map((link) => <li><a class={link.className} href={link.href} target="_blank" rel="noopener">{link.label}</a></li>)}
+          </ul>
+        ) : (
+          <p class="placeholder-note">Social links and an optional interest form have not been configured yet.</p>
+        )}
+      </div>
     </div>
   </section>
   <section class="section section-tint">
@@ -77,22 +71,22 @@ const externalLinks = [
     </div>
   </section>
   <section class="section">
-    <div class="container contact-panel">
-      <div>
-        <p class="eyebrow">Stay in the loop</p>
-        <h2>Join the conversation</h2>
-        <p>The {site.contact.groupMeLabel} is our current group chat. Instagram is another good place to follow club updates.</p>
-      </div>
-      <div class="contact-options">
-        {site.contact.email && <p><a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></p>}
-        {externalLinks.length > 0 ? (
-          <ul class="button-list">
-            {externalLinks.map((link) => <li><a class={link.className} href={link.href} target="_blank" rel="noopener">{link.label}</a></li>)}
-          </ul>
-        ) : (
-          <p class="placeholder-note">Social links and an optional interest form have not been configured yet.</p>
-        )}
-      </div>
+    <div class="container info-grid welcome-grid">
+      <article class="feature-card">
+        <span class="feature-number">01</span>
+        <h2>Beginners welcome</h2>
+        <p>Come learn the basics in a friendly environment. You do not need prior competitive experience.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-number">02</span>
+        <h2>Keep growing</h2>
+        <p>Intermediate and advanced players can meet new partners, practice technique, and find challenging games.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-number">03</span>
+        <h2>Try a practice</h2>
+        <p>Attend a practice and get to know the community before making any longer commitment.</p>
+      </article>
     </div>
   </section>
 </BaseLayout>
