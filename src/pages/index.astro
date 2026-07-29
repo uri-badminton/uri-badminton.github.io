@@ -14,10 +14,19 @@ const nextPractice = site.practiceSchedule[0];
   </section>
   <section class="hero-action-strip" aria-label="Get started">
     <div class="container hero-action-inner">
-      <p>{site.hero.description}</p>
+      <p>
+        <span class="hero-copy-full">{site.hero.description}</span>
+        <span class="hero-copy-compact">Meet students, build your game, and enjoy time on court. All levels welcome.</span>
+      </p>
       <div class="button-group">
-        <a class="button button-primary" href="/join/">Join a Practice</a>
-        <a class="button button-secondary" href="/training-videos/">Watch Training Videos</a>
+        <a class="button button-primary" href="/join/" aria-label="Join a Practice">
+          <span class="button-label-full">Join a Practice</span>
+          <span class="button-label-compact" aria-hidden="true">Join Practice</span>
+        </a>
+        <a class="button button-secondary" href="/training-videos/" aria-label="Watch Training Videos">
+          <span class="button-label-full">Watch Training Videos</span>
+          <span class="button-label-compact" aria-hidden="true">Training Videos</span>
+        </a>
       </div>
     </div>
   </section>

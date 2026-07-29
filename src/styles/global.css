@@ -278,6 +278,14 @@ ul {
   gap: 0.75rem;
 }
 
+.button-label-compact {
+  display: none;
+}
+
+.hero-copy-compact {
+  display: none;
+}
+
 .button {
   display: inline-flex;
   min-height: 3rem;
@@ -1246,11 +1254,37 @@ ul {
   }
 
   .hero-action-inner p {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
+  }
+
+  .hero-copy-full {
+    display: none;
+  }
+
+  .hero-copy-compact {
+    display: inline;
+  }
+
+  .hero-action-inner .button-group {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
   }
 
   .hero-action-inner .button {
-    min-height: 2.75rem;
+    width: 100%;
+    min-height: 2.65rem;
+    padding: 0.6rem 0.55rem;
+    font-size: 0.88rem;
+  }
+
+  .hero-action-inner .button-label-full {
+    display: none;
+  }
+
+  .hero-action-inner .button-label-compact {
+    display: inline;
   }
 
   .home-practice,
