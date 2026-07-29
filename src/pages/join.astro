@@ -2,28 +2,23 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { site } from "../data/site";
 
-const externalLinks = [
+const socialLinks = [
   site.contact.groupMeUrl && {
     href: site.contact.groupMeUrl,
     label: `Join the ${site.contact.groupMeLabel ?? "GroupMe"}`,
-    className: "button button-primary",
+    iconPath: "/icons/groupme.svg",
   },
   site.contact.instagramUrl && {
     href: site.contact.instagramUrl,
     label: "Follow on Instagram",
-    className: "button button-outline",
+    iconPath: "/icons/instagram.svg",
   },
   site.contact.youtubeChannelUrl && {
     href: site.contact.youtubeChannelUrl,
     label: "Visit our YouTube channel",
-    className: "button button-outline",
+    iconPath: "/icons/youtube.svg",
   },
-  site.contact.interestFormUrl && {
-    href: site.contact.interestFormUrl,
-    label: "Open the interest form",
-    className: "button button-outline",
-  },
-].filter(Boolean) as { href: string; label: string; className: string }[];
+].filter(Boolean) as { href: string; label: string; iconPath: string }[];
 ---
 
 <BaseLayout title="Join Us" description="Join URI Badminton Club. Players of every experience level are welcome.">
@@ -37,12 +32,21 @@ const externalLinks = [
       </div>
       <div class="contact-options">
         {site.contact.email && <p><a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></p>}
-        {externalLinks.length > 0 ? (
-          <ul class="button-list">
-            {externalLinks.map((link) => <li><a class={link.className} href={link.href} target="_blank" rel="noopener">{link.label}</a></li>)}
+        {socialLinks.length > 0 ? (
+          <ul class="social-link-list" aria-label="URI Badminton Club social links">
+            {socialLinks.map((link) => (
+              <li>
+                <a class="social-icon-link" href={link.href} target="_blank" rel="noopener" aria-label={link.label} title={link.label}>
+                  <img src={link.iconPath} alt="" width="26" height="26" />
+                </a>
+              </li>
+            ))}
           </ul>
         ) : (
           <p class="placeholder-note">Social links and an optional interest form have not been configured yet.</p>
+        )}
+        {site.contact.interestFormUrl && (
+          <a class="button button-outline" href={site.contact.interestFormUrl} target="_blank" rel="noopener">Open the interest form</a>
         )}
       </div>
     </div>
