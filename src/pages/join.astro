@@ -24,35 +24,31 @@ const socialLinks = [
 <BaseLayout title="Join Us" description="Join URI Badminton Club. Players of every experience level are welcome.">
   <h1 class="sr-only">Join URI Badminton Club</h1>
   <section class="section">
-    <div class="container contact-panel">
-      <div>
+    <div class="container info-grid join-start-grid">
+      <article class="contact-card">
         <p class="eyebrow">Stay in the loop</p>
         <h2>Join the conversation</h2>
         <p>The {site.contact.groupMeLabel} is our current group chat. Instagram is another good place to follow club updates.</p>
-      </div>
-      <div class="contact-options">
-        {site.contact.email && <p><a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></p>}
-        {socialLinks.length > 0 ? (
-          <ul class="social-link-list" aria-label="URI Badminton Club social links">
-            {socialLinks.map((link) => (
-              <li>
-                <a class="social-icon-link" href={link.href} target="_blank" rel="noopener" aria-label={link.label} title={link.label}>
-                  <img src={link.iconPath} alt="" width="26" height="26" />
-                </a>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p class="placeholder-note">Social links and an optional interest form have not been configured yet.</p>
-        )}
-        {site.contact.interestFormUrl && (
-          <a class="button button-outline" href={site.contact.interestFormUrl} target="_blank" rel="noopener">Open the interest form</a>
-        )}
-      </div>
-    </div>
-  </section>
-  <section class="section section-tint">
-    <div class="container info-grid">
+        <div class="contact-options">
+          {site.contact.email && <p><a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></p>}
+          {socialLinks.length > 0 ? (
+            <ul class="social-link-list" aria-label="URI Badminton Club social links">
+              {socialLinks.map((link) => (
+                <li>
+                  <a class="social-icon-link" href={link.href} target="_blank" rel="noopener" aria-label={link.label} title={link.label}>
+                    <img src={link.iconPath} alt="" width="26" height="26" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p class="placeholder-note">Social links and an optional interest form have not been configured yet.</p>
+          )}
+          {site.contact.interestFormUrl && (
+            <a class="button button-outline" href={site.contact.interestFormUrl} target="_blank" rel="noopener">Open the interest form</a>
+          )}
+        </div>
+      </article>
       <article>
         <p class="eyebrow">Ready for your first visit?</p>
         <h2>What to bring</h2>
@@ -60,18 +56,20 @@ const socialLinks = [
           {site.whatToBring.map((item) => <li>{item}</li>)}
         </ul>
       </article>
-      <article>
+    </div>
+  </section>
+  <section class="section section-tint cardio-section">
+    <div class="container cardio-copy">
         <p class="eyebrow">Small shuttle. Serious workout.</p>
         <h2>Cardio that feels like a game</h2>
-        <p>Social badminton clocks in around 5.5 METs, while competitive match play can reach 9 METs. For a 70 kg player, that is roughly 400–660 calories an hour—depending on the pace, the rallies, and how often the shuttle sends you on an emergency sprint.</p>
-        <p>In one study, eight weeks of recreational play improved aerobic fitness by 16%. Badminton is non-contact, too: a recent review found about 1–4 injuries per 1,000 hours, mostly mild or moderate. Warm up your ankles and knees, then let a five-gram shuttle humble you.</p>
+        <p>Social badminton clocks in around 5.5 METs, while competitive match play can reach 9. For a 70 kg player, that is roughly 400–660 calories an hour—depending on how often the shuttle sends you on an emergency sprint.</p>
+        <p>Eight weeks of recreational play improved aerobic fitness by 16% in one study. Badminton is non-contact, and a recent review found about 1–4 injuries per 1,000 hours, mostly mild or moderate. Warm up, then let a five-gram shuttle humble you.</p>
         <p class="evidence-links">
           <span>Curious about the numbers?</span>
           <a href="https://pacompendium.com/sports/" target="_blank" rel="noopener">Energy</a>
           <a href="https://pubmed.ncbi.nlm.nih.gov/27472020/" target="_blank" rel="noopener">Fitness</a>
           <a href="https://bmjopensem.bmj.com/content/11/1/e002127" target="_blank" rel="noopener">Injuries</a>
         </p>
-      </article>
     </div>
   </section>
   <section class="section">

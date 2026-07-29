@@ -796,6 +796,35 @@ ul {
   min-width: 0;
 }
 
+.contact-card .contact-options {
+  margin-top: 1.5rem;
+}
+
+.join-start-grid article {
+  box-shadow: var(--shadow);
+}
+
+.cardio-section {
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+
+.cardio-copy {
+  max-width: 58rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.cardio-copy > p:not(.eyebrow, .evidence-links) {
+  max-width: 52rem;
+  margin-inline: auto;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.cardio-copy .evidence-links {
+  justify-content: center;
+}
+
 .social-link-list {
   display: flex;
   flex-wrap: wrap;
