@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+---
+
+<BaseLayout title="Schedule" description="Weekly practice schedule and arrival information for URI Badminton.">
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow">Plan your practice</p>
+      <h1>Schedule</h1>
+      <p>Recurring practice details will be posted here as soon as student organizers confirm them.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="schedule-list">
+        {site.practiceSchedule.map((session) => (
+          <article class="practice-card schedule-card">
+            <p class="practice-label">{session.label}</p>
+            <dl>
+              <div><dt>Day</dt><dd>{session.day}</dd></div>
+              <div><dt>Time</dt><dd>{session.time}</dd></div>
+              <div><dt>Location</dt><dd>{session.location}</dd></div>
+            </dl>
+            <p class="practice-note">{session.note}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <section class="section section-tint">
+    <div class="container info-grid">
+      <article>
+        <p class="eyebrow">Before you arrive</p>
+        <h2>Plan for the court</h2>
+        <h3>Arrival guidance</h3>
+        <p>{site.arrivalGuidance}</p>
+        <h3>Location guidance</h3>
+        <p>{site.locationGuidance}</p>
+      </article>
+      <article>
+        <p class="eyebrow">Pack the essentials</p>
+        <h2>What to bring</h2>
+        <ul class="check-list">
+          {site.whatToBring.map((item) => <li>{item}</li>)}
+        </ul>
+      </article>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container policy-card">
+      <div>
+        <p class="eyebrow">Before leaving for practice</p>
+        <h2>Cancellations and updates</h2>
+        <p>{site.cancellationPolicy}</p>
+      </div>
+      <div class="button-group">
+        <a class="button button-primary" href="/announcements/">Check announcements</a>
+        <a class="button button-outline" href="/join/">Join a practice</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

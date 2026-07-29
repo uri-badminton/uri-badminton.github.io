@@ -1,0 +1,53 @@
+---
+import { site } from "../data/site";
+
+const year = new Date().getFullYear();
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/announcements/", label: "Announcements" },
+  { href: "/schedule/", label: "Schedule" },
+  { href: "/training-videos/", label: "Training Videos" },
+  { href: "/join/", label: "Join Us" },
+];
+
+const socialLinks = [
+  site.contact.instagramUrl && { href: site.contact.instagramUrl, label: "Instagram" },
+  site.contact.youtubeChannelUrl && { href: site.contact.youtubeChannelUrl, label: "YouTube" },
+].filter(Boolean) as { href: string; label: string }[];
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-title">{site.name}</p>
+      <p class="footer-disclaimer">{site.disclaimer}</p>
+    </div>
+    <div>
+      <p class="footer-heading">Explore</p>
+      <ul class="footer-links">
+        {links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Connect</p>
+      {site.contact.email ? (
+        <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+      ) : (
+        <p>Contact details to be announced.</p>
+      )}
+      {socialLinks.length > 0 && (
+        <ul class="footer-links social-links">
+          {socialLinks.map((link) => (
+            <li><a href={link.href} rel="me noopener" target="_blank">{link.label}</a></li>
+          ))}
+        </ul>
+      )}
+      <a class="repo-link" href={site.repositoryUrl} rel="noopener" target="_blank">
+        View this website on GitHub
+      </a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© {year} {site.name}. Student maintained.</p>
+  </div>
+</footer>

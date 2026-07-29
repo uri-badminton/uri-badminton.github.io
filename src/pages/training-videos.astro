@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import VideoCard from "../components/VideoCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const videos = (await getCollection("videos"))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout title="Training Videos" description="Badminton training videos and practice notes shared by URI Badminton.">
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow">Learn between practices</p>
+      <h1>Training Videos</h1>
+      <p>Review drills, movement, positioning, and rally patterns shared by student organizers.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      {videos.length > 0 ? (
+        <div class="video-grid">
+          {videos.map((entry) => <VideoCard {...entry.data} />)}
+        </div>
+      ) : (
+        <div class="empty-state large-empty">
+          <span class="empty-icon" aria-hidden="true">▶</span>
+          <h2>Practice videos will be posted soon</h2>
+          <p>No training videos have been published yet. This page will only link to real club videos.</p>
+          <a class="button button-primary" href="/join/">Join a practice</a>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

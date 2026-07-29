@@ -1,0 +1,18 @@
+{
+  "name": "uri-badminton-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro check && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/check": "0.9.10",
+    "@astrojs/sitemap": "3.7.3",
+    "astro": "7.1.5",
+    "typescript": "6.0.3"
+  }
+}

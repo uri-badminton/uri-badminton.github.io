@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import AnnouncementCard from "../../components/AnnouncementCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const announcements = (await getCollection("announcements"))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout
+  title="Announcements"
+  description="Practice updates, cancellations, and community news from URI Badminton."
+>
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow">The latest from the community</p>
+      <h1>Announcements</h1>
+      <p>Check here for practice details, cancellations, schedule changes, and other student community news.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      {announcements.length > 0 ? (
+        <div class="card-grid">
+          {announcements.map((entry) => <AnnouncementCard id={entry.id} {...entry.data} />)}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <h2>No announcements yet</h2>
+          <p>Confirmed community updates will appear here.</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

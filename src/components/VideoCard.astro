@@ -1,0 +1,36 @@
+---
+type Props = {
+  title: string;
+  date: Date;
+  youtubeId: string;
+  summary: string;
+  topics: string[];
+};
+
+const { title, date, youtubeId, summary, topics } = Astro.props;
+const watchUrl = `https://www.youtube.com/watch?v=${encodeURIComponent(youtubeId)}`;
+const thumbnailUrl = `https://i.ytimg.com/vi/${encodeURIComponent(youtubeId)}/hqdefault.jpg`;
+---
+
+<article class="card video-card">
+  <a class="video-thumbnail" href={watchUrl} target="_blank" rel="noopener">
+    <img src={thumbnailUrl} alt="" width="480" height="360" loading="lazy" />
+    <span class="play-badge" aria-hidden="true">▶</span>
+    <span class="sr-only">Watch {title} on YouTube</span>
+  </a>
+  <div class="video-content">
+    <time datetime={date.toISOString()}>
+      {date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })}
+    </time>
+    <h2>{title}</h2>
+    <p>{summary}</p>
+    {topics.length > 0 && (
+      <ul class="tag-list" aria-label="Topics">
+        {topics.map((topic) => <li>{topic}</li>)}
+      </ul>
+    )}
+    <a class="text-link" href={watchUrl} target="_blank" rel="noopener">
+      Watch on YouTube <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</article>

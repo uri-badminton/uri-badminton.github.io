@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+
+const externalLinks = [
+  site.contact.instagramUrl && { href: site.contact.instagramUrl, label: "Follow on Instagram" },
+  site.contact.youtubeChannelUrl && { href: site.contact.youtubeChannelUrl, label: "Visit our YouTube channel" },
+  site.contact.interestFormUrl && { href: site.contact.interestFormUrl, label: "Open the interest form" },
+].filter(Boolean) as { href: string; label: string }[];
+---
+
+<BaseLayout title="Join Us" description="Join the URI Badminton student community. Players of every experience level are welcome.">
+  <section class="page-hero join-hero">
+    <div class="container narrow">
+      <p class="eyebrow">Everyone starts somewhere</p>
+      <h1>Come play with us.</h1>
+      <p>Whether you are picking up a racket for the first time or looking for stronger rallies, you are welcome at URI Badminton.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container info-grid welcome-grid">
+      <article class="feature-card">
+        <span class="feature-number">01</span>
+        <h2>Beginners welcome</h2>
+        <p>Come learn the basics in a friendly environment. You do not need prior competitive experience.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-number">02</span>
+        <h2>Keep growing</h2>
+        <p>Intermediate and advanced players can meet new partners, practice technique, and find challenging games.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-number">03</span>
+        <h2>Try a practice</h2>
+        <p>Attend a practice and get to know the community before making any longer commitment.</p>
+      </article>
+    </div>
+  </section>
+  <section class="section section-tint">
+    <div class="container info-grid">
+      <article>
+        <p class="eyebrow">Ready for your first visit?</p>
+        <h2>What to bring</h2>
+        <ul class="check-list">
+          {site.whatToBring.map((item) => <li>{item}</li>)}
+        </ul>
+      </article>
+      <article>
+        <p class="eyebrow">A good community starts here</p>
+        <h2>Conduct & sportsmanship</h2>
+        <p>Treat players, organizers, facilities, and equipment with respect. Help create games where everyone can participate safely and comfortably.</p>
+        <p>Share court time fairly, follow facility rules, and bring concerns to a student organizer.</p>
+      </article>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container contact-panel">
+      <div>
+        <p class="eyebrow">Stay in the loop</p>
+        <h2>Contact & updates</h2>
+        <p>Schedule changes are posted on the <a href="/announcements/">Announcements page</a>. Check it before heading to practice.</p>
+      </div>
+      <div class="contact-options">
+        <div>
+          <h3>Email</h3>
+          {site.contact.email ? <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a> : <p>To be announced</p>}
+        </div>
+        {externalLinks.length > 0 ? (
+          <ul class="button-list">
+            {externalLinks.map((link) => <li><a class="button button-outline" href={link.href} target="_blank" rel="noopener">{link.label}</a></li>)}
+          </ul>
+        ) : (
+          <p class="placeholder-note">Social links and an optional interest form have not been configured yet.</p>
+        )}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

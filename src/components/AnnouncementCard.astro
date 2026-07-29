@@ -1,0 +1,25 @@
+---
+type Props = {
+  id: string;
+  title: string;
+  date: Date;
+  summary: string;
+};
+
+const { id, title, date, summary } = Astro.props;
+const formattedDate = date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  timeZone: "UTC",
+});
+---
+
+<article class="card announcement-card">
+  <time datetime={date.toISOString()}>{formattedDate}</time>
+  <h3><a href={`/announcements/${id}/`}>{title}</a></h3>
+  <p>{summary}</p>
+  <a class="text-link" href={`/announcements/${id}/`}>
+    Read announcement <span aria-hidden="true">→</span>
+  </a>
+</article>

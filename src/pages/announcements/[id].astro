@@ -1,0 +1,36 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const announcements = await getCollection("announcements");
+  return announcements
+    .filter((entry) => !entry.data.draft)
+    .map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const formattedDate = entry.data.date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  timeZone: "UTC",
+});
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.summary}>
+  <article>
+    <header class="article-hero">
+      <div class="container article-container">
+        <a class="back-link" href="/announcements/"><span aria-hidden="true">←</span> All announcements</a>
+        <time datetime={entry.data.date.toISOString()}>{formattedDate}</time>
+        <h1>{entry.data.title}</h1>
+        <p>{entry.data.summary}</p>
+      </div>
+    </header>
+    <div class="container article-container prose">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
