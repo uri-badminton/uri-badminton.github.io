@@ -58,10 +58,10 @@ export const site: SiteConfig = {
   practiceSchedule: [
     {
       label: "Weekly Practice",
-      day: "To be announced",
-      time: "To be announced",
-      location: "To be announced",
-      note: "The confirmed recurring schedule will be posted here.",
+      day: "Wednesdays (starting 7/29)",
+      time: "18:00–19:30",
+      location: "Mackal Field House",
+      note: "Summer break schedule: every Wednesday at the same time.",
     },
   ],
   contact: {
@@ -72,8 +72,7 @@ export const site: SiteConfig = {
     groupMeLabel: "2025–2026 GroupMe",
     interestFormUrl: optionalUrl(),
   },
-  locationGuidance:
-    "The practice location and arrival directions will be added once confirmed.",
+  locationGuidance: "Practices are currently held at Mackal Field House.",
   arrivalGuidance:
     "Please arrive a few minutes early once practice details are posted so the group can organize courts efficiently.",
   cancellationPolicy:
