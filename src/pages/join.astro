@@ -3,10 +3,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { site } from "../data/site";
 
 const externalLinks = [
-  site.contact.instagramUrl && { href: site.contact.instagramUrl, label: "Follow on Instagram" },
-  site.contact.youtubeChannelUrl && { href: site.contact.youtubeChannelUrl, label: "Visit our YouTube channel" },
-  site.contact.interestFormUrl && { href: site.contact.interestFormUrl, label: "Open the interest form" },
-].filter(Boolean) as { href: string; label: string }[];
+  site.contact.groupMeUrl && {
+    href: site.contact.groupMeUrl,
+    label: `Join the ${site.contact.groupMeLabel ?? "GroupMe"}`,
+    className: "button button-primary",
+  },
+  site.contact.instagramUrl && {
+    href: site.contact.instagramUrl,
+    label: "Follow on Instagram",
+    className: "button button-outline",
+  },
+  site.contact.youtubeChannelUrl && {
+    href: site.contact.youtubeChannelUrl,
+    label: "Visit our YouTube channel",
+    className: "button button-outline",
+  },
+  site.contact.interestFormUrl && {
+    href: site.contact.interestFormUrl,
+    label: "Open the interest form",
+    className: "button button-outline",
+  },
+].filter(Boolean) as { href: string; label: string; className: string }[];
 ---
 
 <BaseLayout title="Join Us" description="Join the URI Badminton student community. Players of every experience level are welcome.">
@@ -57,17 +74,14 @@ const externalLinks = [
     <div class="container contact-panel">
       <div>
         <p class="eyebrow">Stay in the loop</p>
-        <h2>Contact & updates</h2>
-        <p>Check the <a href="/schedule/">Schedule page</a> and our Instagram before heading to practice.</p>
+        <h2>Join the conversation</h2>
+        <p>The {site.contact.groupMeLabel} is our current group chat. Instagram is another good place to follow club updates.</p>
       </div>
       <div class="contact-options">
-        <div>
-          <h3>Email</h3>
-          {site.contact.email ? <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a> : <p>To be announced</p>}
-        </div>
+        {site.contact.email && <p><a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></p>}
         {externalLinks.length > 0 ? (
           <ul class="button-list">
-            {externalLinks.map((link) => <li><a class="button button-outline" href={link.href} target="_blank" rel="noopener">{link.label}</a></li>)}
+            {externalLinks.map((link) => <li><a class={link.className} href={link.href} target="_blank" rel="noopener">{link.label}</a></li>)}
           </ul>
         ) : (
           <p class="placeholder-note">Social links and an optional interest form have not been configured yet.</p>

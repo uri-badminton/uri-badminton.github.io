@@ -10,6 +10,10 @@ const links = [
 ];
 
 const socialLinks = [
+  site.contact.groupMeUrl && {
+    href: site.contact.groupMeUrl,
+    label: site.contact.groupMeLabel ?? "GroupMe",
+  },
   site.contact.instagramUrl && { href: site.contact.instagramUrl, label: "Instagram" },
   site.contact.youtubeChannelUrl && { href: site.contact.youtubeChannelUrl, label: "YouTube" },
 ].filter(Boolean) as { href: string; label: string }[];
@@ -31,7 +35,7 @@ const socialLinks = [
       <p class="footer-heading">Connect</p>
       {site.contact.email ? (
         <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
-      ) : (
+      ) : socialLinks.length === 0 && (
         <p>Contact details to be announced.</p>
       )}
       {socialLinks.length > 0 && (

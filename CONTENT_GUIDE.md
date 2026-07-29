@@ -85,13 +85,15 @@ Set `featured: true` to include the video on the homepage. Set `draft: true` to 
 Open `src/data/site.ts` and edit only the relevant values:
 
 - `practiceSchedule` for days, times, locations, and notes
-- `contact` for email, Instagram, YouTube, and an interest form
+- `contact` for email, Instagram, YouTube, GroupMe, and an interest form
 - `locationGuidance` and `arrivalGuidance`
 - `whatToBring`
 
 More than one weekly session can be added by copying the object inside `practiceSchedule`. Do not edit page components to update schedule details.
 
 Leave unavailable links as `undefined`. Do not enter `#`, made-up usernames, placeholder emails, or unconfirmed locations.
+
+When the annual GroupMe changes, update both `groupMeUrl` and `groupMeLabel` together. The current entry is labeled `2025–2026 GroupMe`.
 
 ## After every update
 

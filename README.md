@@ -65,13 +65,15 @@ Edit `src/data/site.ts`. This is the single source for:
 
 - Practice day, time, location, and notes
 - Contact email
-- Instagram, YouTube, and interest form links
+- Instagram, YouTube, GroupMe, and interest form links
 - Arrival and location guidance
 - What-to-bring list
 - Shared description and disclaimer
 - Optional homepage club photo
 
 Unconfigured URLs must remain `undefined`; the site hides their links automatically. Never use `"#"` as a placeholder and never invent club details.
+
+The active GroupMe URL and its academic-year label are stored together in `site.contact`. Update both when a new annual group replaces the current `2025–2026 GroupMe`.
 
 To add a real homepage photograph later, save it in `public/images/` and set `hero.imagePath` to its root-relative path, such as `"/images/club-practice.jpg"`.
 

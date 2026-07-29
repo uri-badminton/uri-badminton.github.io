@@ -21,6 +21,8 @@ export type SiteConfig = {
     email?: string;
     instagramUrl?: string;
     youtubeChannelUrl?: string;
+    groupMeUrl?: string;
+    groupMeLabel?: string;
     interestFormUrl?: string;
   };
   locationGuidance: string;
@@ -65,6 +67,8 @@ export const site: SiteConfig = {
     email: undefined,
     instagramUrl: optionalUrl("https://www.instagram.com/uri_badminton/"),
     youtubeChannelUrl: optionalUrl("https://www.youtube.com/@uribadminton"),
+    groupMeUrl: optionalUrl("https://groupme.com/join_group/110258229/q2MDNsK6"),
+    groupMeLabel: "2025–2026 GroupMe",
     interestFormUrl: optionalUrl(),
   },
   locationGuidance:
