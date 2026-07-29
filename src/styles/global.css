@@ -374,8 +374,8 @@ ul {
   padding-block: clamp(2.75rem, 5vw, 4rem);
 }
 
-.home-join-band {
-  padding-block: clamp(2.5rem, 5vw, 3.5rem);
+.join-band.home-join-band {
+  padding-block: clamp(1.75rem, 3.5vw, 2.5rem);
 }
 
 .practice-card {
