@@ -1329,6 +1329,38 @@ ul {
     margin-top: 0.75rem;
   }
 
+  .welcome-section {
+    padding-block: 2.5rem;
+  }
+
+  .welcome-grid {
+    gap: 1rem;
+  }
+
+  .welcome-grid .feature-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 0.8rem;
+    padding: 1.35rem;
+  }
+
+  .welcome-grid .feature-number {
+    margin: 0;
+    font-size: 1.55rem;
+    line-height: 1;
+  }
+
+  .welcome-grid .feature-card h2 {
+    margin: 0;
+    font-size: 1.55rem;
+  }
+
+  .welcome-grid .feature-card p {
+    grid-column: 1 / -1;
+    margin: 0.85rem 0 0;
+  }
+
   .site-footer {
     padding-top: 3rem;
   }
