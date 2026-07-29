@@ -750,24 +750,11 @@ ul {
 }
 
 .external-link-icon {
-  position: relative;
-  width: 0.72rem;
-  height: 0.72rem;
   flex: 0 0 auto;
-  border-top: 2px solid currentColor;
-  border-right: 2px solid currentColor;
-}
-
-.external-link-icon::after {
-  position: absolute;
-  top: 0.2rem;
-  right: -0.08rem;
-  width: 0.75rem;
-  height: 2px;
-  background: currentColor;
-  content: "";
-  transform: rotate(-45deg);
-  transform-origin: right center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-variant-emoji: text;
+  line-height: 1;
 }
 
 .video-content {
