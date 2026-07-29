@@ -28,7 +28,7 @@ html {
 
 body {
   margin: 0;
-  min-width: 20rem;
+  min-width: 0;
   color: var(--ink);
   background: var(--off-white);
   font-family: Arial, Helvetica, sans-serif;
@@ -645,27 +645,6 @@ ul {
   margin-top: 2rem;
 }
 
-.evidence-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 0.8rem;
-  align-items: baseline;
-  margin-top: 1.25rem;
-  color: var(--muted);
-  font-size: 0.82rem;
-}
-
-.evidence-links span {
-  flex-basis: 100%;
-  font-weight: 700;
-}
-
-.evidence-links a {
-  color: var(--navy);
-  font-weight: 700;
-  text-underline-offset: 0.2em;
-}
-
 .check-list {
   display: grid;
   padding: 0;
@@ -805,25 +784,92 @@ ul {
   box-shadow: var(--shadow);
 }
 
-.cardio-section {
+.equipment-note {
+  padding-top: 1rem;
+  margin: 1.5rem 0 0;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+.faq-section {
   padding-block: clamp(3rem, 6vw, 5rem);
 }
 
-.cardio-copy {
-  max-width: 58rem;
+.faq-heading {
+  max-width: 52rem;
   margin-inline: auto;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
-.cardio-copy > p:not(.eyebrow, .evidence-links) {
-  max-width: 52rem;
-  margin-inline: auto;
+.faq-heading > p:last-child {
   color: var(--muted);
   font-size: 1.05rem;
 }
 
-.cardio-copy .evidence-links {
-  justify-content: center;
+.faq-list {
+  display: grid;
+  max-width: 58rem;
+  margin-inline: auto;
+  gap: 0.75rem;
+}
+
+.faq-list details {
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+}
+
+.faq-list summary {
+  display: flex;
+  min-height: 3.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  color: var(--navy);
+  cursor: pointer;
+  font-weight: 800;
+  list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list summary::after {
+  flex: 0 0 auto;
+  color: var(--blue);
+  content: "+";
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.faq-list details[open] summary::after {
+  content: "−";
+}
+
+.faq-answer {
+  padding: 0 1.25rem 1.15rem;
+  color: var(--muted);
+}
+
+.faq-answer > p:first-child {
+  margin: 0;
+}
+
+.faq-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  margin: 0.85rem 0 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.faq-sources a {
+  color: var(--navy);
 }
 
 .social-link-list {
@@ -1149,6 +1195,10 @@ ul {
 }
 
 @media (max-width: 24rem) {
+  .container {
+    width: min(calc(100% - 1.5rem), var(--container));
+  }
+
   .brand {
     font-size: 1rem;
   }
@@ -1165,6 +1215,23 @@ ul {
   .practice-card dl > div {
     grid-template-columns: 1fr;
     gap: 0.2rem;
+  }
+
+  .info-grid article {
+    padding: 1.5rem;
+  }
+
+  .faq-heading h2 {
+    font-size: 2rem;
+  }
+
+  .faq-list summary {
+    gap: 0.75rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .faq-answer {
+    padding: 0 1rem 1rem;
   }
 }
 

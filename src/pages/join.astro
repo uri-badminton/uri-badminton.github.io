@@ -1,4 +1,5 @@
 ---
+import BeginnerFaq from "../components/BeginnerFaq.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { site } from "../data/site";
 
@@ -55,22 +56,14 @@ const socialLinks = [
         <ul class="check-list">
           {site.whatToBring.map((item) => <li>{item}</li>)}
         </ul>
+        {site.clubPolicies.loanerRacketsAvailable && site.clubPolicies.shuttlecocksProvided && (
+          <p class="equipment-note"><strong>No gear yet?</strong> We provide rackets and shuttlecocks.</p>
+        )}
       </article>
     </div>
   </section>
-  <section class="section section-tint cardio-section">
-    <div class="container cardio-copy">
-        <p class="eyebrow">Small shuttle. Serious workout.</p>
-        <h2>Cardio that feels like a game</h2>
-        <p>Social badminton clocks in around 5.5 METs, while competitive match play can reach 9. For a 70 kg player, that is roughly 400–660 calories an hour—depending on how often the shuttle sends you on an emergency sprint.</p>
-        <p>Eight weeks of recreational play improved aerobic fitness by 16% in one study. Badminton is non-contact, and a recent review found about 1–4 injuries per 1,000 hours, mostly mild or moderate. Warm up, then let a five-gram shuttle humble you.</p>
-        <p class="evidence-links">
-          <span>Curious about the numbers?</span>
-          <a href="https://pacompendium.com/sports/" target="_blank" rel="noopener">Energy</a>
-          <a href="https://pubmed.ncbi.nlm.nih.gov/27472020/" target="_blank" rel="noopener">Fitness</a>
-          <a href="https://bmjopensem.bmj.com/content/11/1/e002127" target="_blank" rel="noopener">Injuries</a>
-        </p>
-    </div>
+  <section class="section section-tint faq-section">
+    <BeginnerFaq />
   </section>
   <section class="section">
     <div class="container info-grid welcome-grid">

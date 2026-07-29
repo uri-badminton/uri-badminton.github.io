@@ -30,6 +30,10 @@ export type SiteConfig = {
   arrivalGuidance: string;
   cancellationPolicy: string;
   whatToBring: string[];
+  clubPolicies: {
+    loanerRacketsAvailable: boolean;
+    shuttlecocksProvided: boolean;
+  };
   disclaimer: string;
 };
 
@@ -78,11 +82,13 @@ export const site: SiteConfig = {
   cancellationPolicy:
     "Cancellations and schedule changes will be posted in Announcements. Check the site before traveling to practice.",
   whatToBring: [
-    "Athletic clothing and non-marking court shoes",
-    "Water",
-    "A racket, if you have one",
-    "A welcoming attitude and good sportsmanship",
+    "Comfortable athletic clothing",
+    "Comfortable, non-marking indoor court shoes",
   ],
+  clubPolicies: {
+    loanerRacketsAvailable: true,
+    shuttlecocksProvided: true,
+  },
   disclaimer:
     "URI Badminton Club is a student-run badminton community at the University of Rhode Island. This website is independently maintained by student organizers.",
 };
