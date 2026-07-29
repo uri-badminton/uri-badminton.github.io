@@ -233,42 +233,33 @@ ul {
 
 .hero {
   position: relative;
-  padding: clamp(2.25rem, 5vw, 4rem) 0;
+  padding-top: min(52.5vw, 27rem);
   color: var(--white);
-  background: var(--navy);
+  background-color: var(--navy);
+  background-image: url("/og.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: min(100%, 68.75rem) auto;
 }
 
-.hero-grid {
-  position: relative;
-  display: grid;
-  align-items: center;
-  gap: 2rem;
+.hero-action-strip {
+  padding: 1.15rem 0;
+  background: rgb(0 25 54 / 94%);
+  border-top: 1px solid rgb(192 221 242 / 22%);
 }
 
-.hero-copy {
-  max-width: 43rem;
+.hero-action-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.hero h1 {
-  max-width: 42rem;
-  margin-bottom: 0.8rem;
-  font-size: clamp(2.8rem, 6vw, 4.7rem);
-}
-
-.hero h1,
-.hero p {
+.hero-action-inner p {
+  max-width: 46rem;
+  margin: 0;
   color: var(--white);
-}
-
-.hero .eyebrow {
-  color: var(--light-blue);
-}
-
-.hero-description {
-  max-width: 40rem;
-  margin-bottom: 1.4rem;
-  color: #e5eef6;
-  font-size: clamp(1.08rem, 2vw, 1.3rem);
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .eyebrow {
@@ -354,38 +345,6 @@ ul {
 .button-gold:hover {
   color: var(--navy);
   background: var(--white);
-}
-
-.hero-brand-panel {
-  display: grid;
-  max-width: 33rem;
-  padding: 0.6rem;
-  margin-inline: auto;
-  place-items: center;
-  gap: 1.25rem;
-  color: var(--navy);
-  background: var(--white);
-  border-radius: 1.5rem;
-  box-shadow: 0 20px 55px rgb(0 0 0 / 22%);
-  text-align: center;
-}
-
-.hero-brand-panel img {
-  width: 100%;
-  aspect-ratio: 1200 / 630;
-  border-radius: 1rem;
-  object-fit: cover;
-}
-
-.hero-brand-panel p {
-  margin: 0;
-  color: var(--ink);
-}
-
-.hero-brand-panel strong {
-  display: block;
-  color: var(--navy);
-  font-size: 1.15rem;
 }
 
 .section {
@@ -995,6 +954,20 @@ ul {
     width: min(calc(100% - 3rem), var(--container));
   }
 
+  .hero-action-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero-action-inner p {
+    max-width: 38rem;
+  }
+
+  .hero-action-inner .button-group {
+    flex: 0 0 auto;
+  }
+
   .join-band-inner {
     flex-direction: row;
     align-items: center;
@@ -1081,10 +1054,6 @@ ul {
 
   .mobile-nav {
     display: none;
-  }
-
-  .hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(24rem, 0.95fr);
   }
 
   .split-section {
