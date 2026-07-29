@@ -1232,7 +1232,8 @@ ul {
 }
 
 @media (max-width: 41.99rem) {
-  .schedule-hero::after {
+  .schedule-hero::after,
+  .training-hero::after {
     content: none;
   }
 
