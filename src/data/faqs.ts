@@ -44,11 +44,12 @@ export const beginnerFaqs: FaqItem[] = [
   {
     question: "Is badminton actually a good workout?",
     answer:
-      "Yes—casual badminton is real cardio: roughly 400 calories an hour for a 154-pound player. Pick up the pace, and competitive play can approach 650 calories an hour. Exact numbers vary, but in normal terms: your watch will notice.",
+      "Yes—casual badminton takes about as much effort as a very brisk treadmill walk. Fast competitive play can feel more like running around 5.5 mph. For a 154-pound player, that works out to roughly 400–650 calories an hour, depending on pace and breaks. Cardio, but with rallies instead of a belt.",
     category: "fitness",
     sources: [
-      { label: "Energy estimates (5.5–9 METs)", href: "https://pacompendium.com/sports/" },
-      { label: "Eight-week fitness study", href: "https://pubmed.ncbi.nlm.nih.gov/27472020/" },
+      { label: "Badminton estimates", href: "https://pacompendium.com/sports/" },
+      { label: "Walking comparison", href: "https://pacompendium.com/walking/" },
+      { label: "Running comparison", href: "https://pacompendium.com/running/" },
     ],
   },
 ];
