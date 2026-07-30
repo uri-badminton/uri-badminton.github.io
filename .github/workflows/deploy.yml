@@ -4,7 +4,10 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: "17 */6 * * *"
+    # Summer practice uploads: Wednesday 18:30–20:00 America/New_York (EDT).
+    - cron: "30 22 * * 3"
+    - cron: "0,30 23 * * 3"
+    - cron: "0 0 * * 4"
   workflow_dispatch:
 
 permissions:
